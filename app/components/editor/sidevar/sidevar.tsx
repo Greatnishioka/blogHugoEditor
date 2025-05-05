@@ -6,6 +6,8 @@ import Text from "./sidevarText";
 import ListTable from "./sidevarListTable";
 import SidevarOther from "./sidevarOther";
 
+import DraggableBlock from "./draggableBlock";
+
 export default function SideVar() {
 
   const [sidevarIsOpenState, setSidevarIsOpenState] = useState<Record<string, boolean>>({
@@ -33,14 +35,7 @@ export default function SideVar() {
     <aside className="absolute flex">
       <div className={`px-[10px] pt-6 transition-colors duration-300 z-50 ${Object.entries(sidevarIsOpenState).find(([key, value]) => value)?.[0]}`} >
         <div className="w-[163px] h-screen rounded-xl bg-[#F4F5F8] border-[1px] border-[#C5D3D3] p-2 shadow-inner">
-          <div className="w-full p-[6px] bg-white rounded-lg border-[1px] border-[#ABE1D4] shadow-md shadow-[#ABE1D4]">
-            <div className="pb-[6px] border-b-[1px] border-[#62BAA5]">
-              <h4 className="text-base text-center font-bold">見出し1</h4>
-            </div>
-            <div className="pt-[6px] text-xs">
-              <p className="">記事の見出しを作成するブロックです。</p>
-            </div>
-          </div>
+          <DraggableBlock id="テキスト" />
         </div>
       </div>
       <ul className="relative w-fit h-full">

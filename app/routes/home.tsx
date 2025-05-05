@@ -1,7 +1,6 @@
 import type { Route } from "./+types/home";
 
-import SideVar from "~/components/editor/sidevar/sidevar";
-import Board from "~/components/editor/board/board";
+import Scene from "~/components/editor/scene";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,12 +10,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+
   return (
   <>
-    <main className="bg-[#FAF6F0] h-screen overflow-hidden">
-      <SideVar />
-      <Board />
-    </main>
+    <Scene />
   </>
   );
 }
