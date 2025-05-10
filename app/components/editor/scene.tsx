@@ -2,19 +2,33 @@
 import { useState } from "react";
 import { DndContext } from '@dnd-kit/core';
 
-import SideVar from "~/components/editor/sidevar/sidevar";
+import SideVar from "~/components/ui/sidevar/sidevar";
 import Board from "~/components/editor/board/board";
 
-export default function Home() {
+import { generateBlockElement } from "~/utils/index";
 
-    const [droppedItems, setDroppedItems] = useState<string[]>([]);
+import { type block } from "~/types/article";
 
-    function handleDragEnd(event: any) {
-        const { active, over } = event;
+type Props = {
+    items: block[];
+}
+
+export default function Home({items}: Props) {
+
+    const [droppedItems, setDroppedItems] = useState<block[]>(items);
+    const [droppedItemsId, setDroppedItemsId] = useState<string[]>(
+        items.map((item) => item.articleUuid)
+    );
+
+    const handleDragEnd = (event: any) => {
+        const { active, over} = event;
         if (over && over.id === 'dropzone') {
-            setDroppedItems((prev) => [...prev, active.id]);
+            setDroppedItemsId((prev) => [...prev, active.id]);
+            setDroppedItems((prev) => [...prev, generateBlockElement(active.id)]);
         }
     }
+
+    console.log(droppedItems);
 
     return (
         <>

@@ -11,3 +11,24 @@
 .sidevarOther {
     background-color: #FFC898;
 }
+.heading-color {
+    color:#62BAA5;
+    border:1px solid #ABE1D4;
+    box-shadow: 0px 0px 6px #ABE1D4;
+}
+.heading-color-strong {
+    color:#62BAA5;
+    border:2px solid #ABE1D4;
+    box-shadow: 0px 0px 8px #ABE1D4;
+}
+.heading-b-color {
+    border-bottom: 1px solid #ABE1D4;
+}
+.text-color {
+    color:#E86968;
+    border:1px solid #E86968;
+    box-shadow: 0px 0px 6px #E86968;
+}
+.text-b-color {
+    border-bottom: 1px solid #E86968;
+}
