@@ -17,7 +17,7 @@ export default function DropZone({ children, droppedItems }: Props) {
             <SortableContext
                 items={droppedItems.map((item) => item.blockUuid)}
             >
-                <ul id="dropZone" ref={setNodeRef} className='flex flex-col gap-[10px] w-full h-full py-9 px-7 bg-[url("public/boardBg.png")]'>
+                <ul id="dropZone" ref={setNodeRef} className='flex flex-col gap-[10px] w-full h-full py-9 px-7 bg-[url("public/boardBg.png")] overflow-y-auto '>
                     {children}
                 </ul>
             </SortableContext>

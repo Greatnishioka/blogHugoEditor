@@ -9,7 +9,7 @@ type Props = {
     content: block
 }
 
-export default function Hedding1({content}: Props) {
+export default function Hedding1({ content }: Props) {
 
     const {
         setNodeRef,
@@ -18,19 +18,19 @@ export default function Hedding1({content}: Props) {
         transform,
         transition,
         isDragging,
-      } = useSortable({
+    } = useSortable({
         id: content.blockUuid,
-      });
+    });
 
     const [text, setText] = useState<string>(content.content);
-    const updateContent = (text:string) => {
+    const updateContent = (text: string) => {
         setText(text);
         content.content = text;
     }
 
     return (
         <>
-            <div 
+            <div
                 ref={setNodeRef}
                 {...attributes}
                 style={{
@@ -44,12 +44,15 @@ export default function Hedding1({content}: Props) {
                         <h3 className="text-[27px] font-bold">見出し1</h3>
                         <p className="text-sm">Heading1</p>
                     </hgroup>
-                    <div className="h-10 w-10 i-mdi-blur"></div>
+                    <div className="flex gap-2">
+                        <button className="h-10 w-10 i-mdi-trash-can text-[#E86968]"></button>
+                        <div className="h-10 w-10 i-mdi-blur"></div>
+                    </div>
                 </div>
                 <div className="pt-4 px-5">
                     <label htmlFor={content.blockUuid} className="w-full h-fit rounded-xl bg-[#F4F5F8] block flex items-center px-2">
-                        <textarea 
-                            onChange={((e) => { 
+                        <textarea
+                            onChange={((e) => {
                                 updateContent(e.target.value);
                                 e.target.style.height = "auto";
                                 e.target.style.height = `${e.target.scrollHeight}px`;
