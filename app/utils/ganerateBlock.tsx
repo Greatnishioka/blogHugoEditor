@@ -10,6 +10,7 @@ import Hedding6 from '../components/editor/blocks/heading/headding6';
 
 
 export const generateBlock = (item:block, index:number) => {
+
     switch (item.blockType) {
         case "heading1":
             return <Hedding1 key={index} content={item} />

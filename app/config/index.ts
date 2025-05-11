@@ -1,1 +1,1 @@
-// .envの内容をここで読み取りたい
+export const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;

@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default function DraggableBlock({ id,title,colorMode,description }: Props) {
-    const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
+    const { attributes, listeners, setNodeRef, transform } = useDraggable({ id,data: { from: "sidebar" } });
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
     // この実装方法は流石に最低なのであとで考え直す

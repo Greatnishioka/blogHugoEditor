@@ -5,6 +5,7 @@ const config = {
   content: {
     filesystem: [
       'app/**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}',
+      'app/**/*.*{html,js,ts,jsx,tsx,vue,svelte,astro}',
     ],
   },
   presets: [
